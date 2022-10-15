@@ -19,17 +19,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Personality Test Quiz'),
+          title:  Text('Personality Test Quiz'),
+          backgroundColor: Color.fromARGB(255, 223, 204, 34),
         ),
         body: Column(children: [
-          const Text('The Question ???'),
+           Text(questions.elementAt(1)),
           ElevatedButton(
             onPressed: answserQuestions,
-            child: const Text('Answser 1'),
+            child:  Text('Answser 1'),
           ),
           ElevatedButton(
             onPressed: answserQuestions,
-            child: const Text('Answser 2'),
+            child:  Text('Answser 2'),
           ),
           ElevatedButton(
             onPressed: answserQuestions,
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
             child: const Text('Answser 4'),
           ),
         ]),
+        backgroundColor: Color.fromARGB(255, 43, 224, 19),
       ),
     );
   }
