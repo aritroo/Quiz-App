@@ -3,6 +3,12 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+
+  void answserQuestions()
+  {
+      print("Answser Choosen!");
+  }
+
   @override
   Widget build(BuildContext context) {
     var questions = [
@@ -16,22 +22,22 @@ class MyApp extends StatelessWidget {
           title: const Text('Personality Test Quiz'),
         ),
         body: Column(children: [
-          Text('The Question ???'),
+          const Text('The Question ???'),
           ElevatedButton(
-            onPressed: null,
-            child: Text('Answser 1'),
+            onPressed: answserQuestions,
+            child: const Text('Answser 1'),
           ),
           ElevatedButton(
-            onPressed: null,
-            child: Text('Answser 2'),
+            onPressed: answserQuestions,
+            child: const Text('Answser 2'),
           ),
           ElevatedButton(
-            onPressed: null,
-            child: Text('Answser 3'),
+            onPressed: answserQuestions,
+            child: const Text('Answser 3'),
           ),
           ElevatedButton(
-            onPressed: null,
-            child: Text('Answser 4'),
+            onPressed: answserQuestions,
+            child: const Text('Answser 4'),
           ),
         ]),
       ),
