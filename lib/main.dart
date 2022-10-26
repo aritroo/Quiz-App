@@ -2,11 +2,27 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
 
-  void answserQuestions()
+  @override
+  State<StatefulWidget> createState() {
+    // ignore: todo
+    // TODO: implement createState
+    //throw UnimplementedError();
+    return _MyAppState();
+  }
+}
+
+class _MyAppState extends State<MyApp>{
+  var _questionIndex = 0;
+
+  void _answserQuestions()
   {
-      print("Answser Choosen!");
+    setState(() {
+      _questionIndex = _questionIndex + 1;  
+    });
+    
+      
   }
 
   @override
@@ -23,21 +39,24 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 223, 204, 34),
         ),
         body: Column(children: [
-           Text(questions.elementAt(1)),
+           Text(
+            questions[_questionIndex]
+            ),
           ElevatedButton(
-            onPressed: answserQuestions,
-            child:  Text('Answser 1'),
+            onPressed: _answserQuestions,
+            child:  Text('Red'),
+            
           ),
           ElevatedButton(
-            onPressed: answserQuestions,
+            onPressed: _answserQuestions,
             child:  Text('Answser 2'),
           ),
           ElevatedButton(
-            onPressed: answserQuestions,
+            onPressed: _answserQuestions,
             child: const Text('Answser 3'),
           ),
           ElevatedButton(
-            onPressed: answserQuestions,
+            onPressed: _answserQuestions,
             child: const Text('Answser 4'),
           ),
         ]),
