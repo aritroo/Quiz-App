@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './question.dart';
 
 void main() => runApp(MyApp());
 
@@ -39,7 +40,7 @@ class _MyAppState extends State<MyApp>{
           backgroundColor: Color.fromARGB(255, 223, 204, 34),
         ),
         body: Column(children: [
-           Text(
+           Question(
             questions[_questionIndex]
             ),
           ElevatedButton(
