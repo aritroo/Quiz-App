@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'Question.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,7 +20,6 @@ class MyAppState extends State<MyApp> {
     setState(() {
       questionIndex = questionIndex + 1;
     });
-    print(questionIndex);
   }
 
   @override
@@ -37,7 +37,7 @@ class MyAppState extends State<MyApp> {
           ),
           body: Column(
             children: [
-              Text(question[questionIndex]),
+              Question(question[questionIndex]),
               ElevatedButton(
                 onPressed: answserQuestion,
                 child: Text('Answser 1'),
