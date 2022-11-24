@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'Question.dart';
+import 'Answser.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,27 +26,33 @@ class MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     var question = [
-      'What is your name?',
-      'What is your fav colour?',
-      'Where are you form?'
+      {
+        'questionText': 'What is your favorite colour?',
+        'answsers': ['Black', 'Red', 'Green', 'White'],
+      },
+      {
+        'questionText': 'What is your favorite animal?',
+        'answsers': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
+      },
+      {
+        'questionText': 'Who is your favorite instructor?',
+        'answsers': ['Max', 'Max', 'Max', 'Max'],
+      }
     ];
     return MaterialApp(
       title: "Quiz_App",
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
             title: Text("Dart Quiz"),
           ),
           body: Column(
             children: [
-              Question(question[questionIndex]),
-              ElevatedButton(
-                onPressed: answserQuestion,
-                child: Text('Answser 1'),
-              ),
-              ElevatedButton(
-                  onPressed: answserQuestion, child: Text('Answser 2')),
-              ElevatedButton(
-                  onPressed: answserQuestion, child: Text('Answser 3')),
+              Question(question[questionIndex]['questionText'] as String),
+              ...(question[questionIndex]['answsers'] as List<String>)
+                  .map((answser) {
+                return Answser(answserQuestion, answser);
+              }).toList()
             ],
           )),
     );
