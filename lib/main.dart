@@ -17,28 +17,34 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
   var questionIndex = 0;
 
+  final question = const [
+    {
+      'questionText': 'What is your favorite colour?',
+      'answsers': ['Black', 'Red', 'Green', 'White'],
+    },
+    {
+      'questionText': 'What is your favorite animal?',
+      'answsers': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
+    },
+    {
+      'questionText': 'Who is your favorite instructor?',
+      'answsers': ['Max', 'Max', 'Max', 'Max'],
+    }
+  ];
+
   void answserQuestion() {
+    //var aBool = true;
     setState(() {
       questionIndex = questionIndex + 1;
     });
+
+    if (questionIndex < question.length) {
+      print('We have more questions');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    final question = [
-      {
-        'questionText': 'What is your favorite colour?',
-        'answsers': ['Black', 'Red', 'Green', 'White'],
-      },
-      {
-        'questionText': 'What is your favorite animal?',
-        'answsers': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
-      },
-      {
-        'questionText': 'Who is your favorite instructor?',
-        'answsers': ['Max', 'Max', 'Max', 'Max'],
-      }
-    ];
     return MaterialApp(
       title: "Quiz_App",
       debugShowCheckedModeBanner: false,
