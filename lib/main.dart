@@ -37,10 +37,6 @@ class MyAppState extends State<MyApp> {
     setState(() {
       questionIndex = questionIndex + 1;
     });
-
-    if (questionIndex < question.length) {
-      print('We have more questions');
-    }
   }
 
   @override
@@ -49,18 +45,26 @@ class MyAppState extends State<MyApp> {
       title: "Quiz_App",
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-          appBar: AppBar(
-            title: Text("Dart Quiz"),
-          ),
-          body: Column(
-            children: [
-              Question(question[questionIndex]['questionText'] as String),
-              ...(question[questionIndex]['answsers'] as List<String>)
-                  .map((answser) {
-                return Answser(answserQuestion, answser);
-              }).toList()
-            ],
-          )),
+        appBar: AppBar(
+          title: Text("Dart Quiz"),
+        ),
+        body: questionIndex < question.length
+            ? Column(
+                children: [
+                  Question(question[questionIndex]['questionText'] as String),
+                  ...(question[questionIndex]['answsers'] as List<String>)
+                      .map((answser) {
+                    return Answser(answserQuestion, answser);
+                  }).toList()
+                ],
+              )
+            : Center(
+                child: Text(
+                  'You Did it',
+                  style: TextStyle(fontSize: 45),
+                ),
+              ),
+      ),
     );
   }
 }
