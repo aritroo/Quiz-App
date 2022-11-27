@@ -17,7 +17,7 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
   var questionIndex = 0;
 
-  final question = const [
+  List<Map<String, dynamic>> question = [
     {
       'questionText': 'What is your favorite colour?',
       'answsers': ['Black', 'Red', 'Green', 'White'],
