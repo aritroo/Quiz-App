@@ -1,8 +1,8 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'Question.dart';
-import 'Answser.dart';
+import 'Quiz.dart';
+import 'result.dart';
 
 void main() => runApp(MyApp());
 
@@ -45,26 +45,16 @@ class MyAppState extends State<MyApp> {
       title: "Quiz_App",
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Dart Quiz"),
-        ),
-        body: questionIndex < question.length
-            ? Column(
-                children: [
-                  Question(question[questionIndex]['questionText'] as String),
-                  ...(question[questionIndex]['answsers'] as List<String>)
-                      .map((answser) {
-                    return Answser(answserQuestion, answser);
-                  }).toList()
-                ],
-              )
-            : Center(
-                child: Text(
-                  'You Did it',
-                  style: TextStyle(fontSize: 45, color: Colors.indigo),
-                ),
-              ),
-      ),
+          appBar: AppBar(
+            title: Text("Dart Quiz"),
+          ),
+          body: questionIndex < question.length
+              ? Quiz(
+                  answerQuestion: answserQuestion,
+                  questionIndex: questionIndex,
+                  question: question,
+                )
+              : Result()),
     );
   }
 }
