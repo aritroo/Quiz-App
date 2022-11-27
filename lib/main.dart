@@ -61,7 +61,7 @@ class MyAppState extends State<MyApp> {
             : Center(
                 child: Text(
                   'You Did it',
-                  style: TextStyle(fontSize: 45),
+                  style: TextStyle(fontSize: 45, color: Colors.indigo),
                 ),
               ),
       ),
