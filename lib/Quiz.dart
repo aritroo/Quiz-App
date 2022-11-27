@@ -14,21 +14,28 @@ class Quiz extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    int ll = question[questionIndex]['answsers'].length;
-
+    // int ll = question[questionIndex]['answsers'].length;
+    int ll = 0;
+    for (int i = 0; i < question[questionIndex]['answsers'].length; i++) {
+      ll++;
+    }
     return Column(
       children: [
         Question(
           question[questionIndex]['questionText'].toString(),
         ),
-        Answser(
-            answerQuestion, question[questionIndex]['answsers'][0].toString()),
-        Answser(
-            answerQuestion, question[questionIndex]['answsers'][1].toString()),
-        Answser(
-            answerQuestion, question[questionIndex]['answsers'][2].toString()),
-        Answser(
-            answerQuestion, question[questionIndex]['answsers'][3].toString()),
+        // Answser(
+        //     answerQuestion, question[questionIndex]['answsers'][0].toString()),
+        // Answser(
+        //     answerQuestion, question[questionIndex]['answsers'][1].toString()),
+        // Answser(
+        //     answerQuestion, question[questionIndex]['answsers'][2].toString()),
+        // Answser(
+        //     answerQuestion, question[questionIndex]['answsers'][3].toString()),
+
+        for (int i = 0; i < question[questionIndex]['answsers'].length; i++)
+          Answser(answerQuestion,
+              question[questionIndex]['answsers'][i].toString()),
       ],
     );
   }
