@@ -6,8 +6,8 @@ class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text('Congrats You Made it!!',
-          style: TextStyle(fontSize: 50, color: Colors.indigo)),
+      child: Text('You Made it!!',
+          style: TextStyle(fontSize: 45, color: Colors.indigo)),
     );
   }
 }
