@@ -8,7 +8,7 @@ class Answser extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Container(
-      width: 150,
+      width: 165,
       child: ElevatedButton(
         child: Text(answserText),
         onPressed: selectHandler,
