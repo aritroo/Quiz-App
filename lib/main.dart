@@ -20,7 +20,7 @@ class MyAppState extends State<MyApp> {
   List<Map<String, dynamic>> question = [
     {
       'questionText': 'What is your favorite colour?',
-      'answsers': ['Black', 'Red', 'Green', 'White'],
+      'answsers': ['Black', 'Green', 'White'],
     },
     {
       'questionText': 'What is your favorite animal?',
@@ -28,8 +28,8 @@ class MyAppState extends State<MyApp> {
     },
     {
       'questionText': 'Who is your favorite instructor?',
-      'answsers': ['Max', 'Max', 'Max', 'Max'],
-    }
+      'answsers': ['Max', 'Max', 'Max'],
+    },
   ];
 
   void answserQuestion() {
