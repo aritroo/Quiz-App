@@ -21,14 +21,17 @@ class MyAppState extends State<MyApp> {
     {
       'questionText': 'What is your favorite colour?',
       'answsers': ['Black', 'Green', 'White'],
+      'scores': [10, 20, 30]
     },
     {
       'questionText': 'What is your favorite animal?',
       'answsers': ['Rabbit', 'Snake', 'Elephant', 'Lion'],
+      'scores': [10, 20, 30, 40]
     },
     {
       'questionText': 'Who is your favorite instructor?',
       'answsers': ['Max', 'Max', 'Max'],
+      'scores': [10, 20, 30]
     },
   ];
 
