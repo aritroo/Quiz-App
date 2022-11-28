@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import './quiz.dart';
 import './result.dart';
@@ -82,7 +81,7 @@ class _MyAppState extends State<MyApp> {
     // dummy = [];
     // questions = []; // does not work if questions is a const
 
-    return GetMaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(

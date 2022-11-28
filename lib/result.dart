@@ -7,17 +7,18 @@ class Result extends StatelessWidget {
   Result(this.resultScore, this.resetHandler);
 
   String get resultPhrase {
-    String resultText;
+    String result_string;
     if (resultScore <= 8) {
-      resultText = 'You are awesome and innocent!';
+      result_string =
+          'You are awesome and innocent! & your score is $resultScore';
     } else if (resultScore <= 12) {
-      resultText = 'Pretty likeable!';
+      result_string = 'Pretty likeable! & your score is $resultScore';
     } else if (resultScore <= 16) {
-      resultText = 'You are ... strange?!';
+      result_string = 'You are ... strange?! & your score is $resultScore';
     } else {
-      resultText = 'You are so bad!';
+      result_string = 'You are so bad! & your score is $resultScore';
     }
-    return resultText;
+    return result_string;
   }
 
   @override
